@@ -1,6 +1,7 @@
 package ru.andrey.kvstorage.console;
 
 import ru.andrey.kvstorage.exception.DatabaseException;
+import ru.andrey.kvstorage.logic.FakeDatabase;
 
 public enum DatabaseCommands {
     CREATE_DATABASE {
@@ -9,9 +10,10 @@ public enum DatabaseCommands {
             if (args.length != 1) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            // TODO: implementation of database is required
-//            return new CreateDatabase(env, args[0], new Database() {});
-            throw new UnsupportedOperationException();
+            /*
+             * Here i use wrong database to keep the code working (except for this function of course)
+             */
+            return new CreateDatabase(env, args[0], new FakeDatabase());
         }
     },
     CREATE_TABLE {
