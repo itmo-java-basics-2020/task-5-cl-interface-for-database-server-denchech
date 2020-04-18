@@ -22,12 +22,12 @@ public interface DatabaseCommandResult {
         private String errorMessage;
         private final DatabaseCommandStatus status;
 
-        public SimpleDatabaseCommandResult(String result, DatabaseCommandStatus status) {
+        private SimpleDatabaseCommandResult(String result, DatabaseCommandStatus status) {
             this.result = Optional.ofNullable(result);
             this.status = status;
         }
 
-        public SimpleDatabaseCommandResult(String result, DatabaseCommandStatus status, String errorMessage) {
+        private SimpleDatabaseCommandResult(String result, DatabaseCommandStatus status, String errorMessage) {
             this(result, status);
             this.errorMessage = errorMessage;
         }
