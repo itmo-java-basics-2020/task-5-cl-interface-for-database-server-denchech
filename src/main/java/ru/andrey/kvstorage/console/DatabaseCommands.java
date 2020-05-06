@@ -13,7 +13,7 @@ public enum DatabaseCommands {
             /*
              * Here i use wrong database to keep the code working (except for this function of course)
              */
-            return new CreateDatabase(env, args[0], new FakeDatabase());
+            return new CreateDatabaseCommand(env, args[0], new FakeDatabase());
         }
     },
     CREATE_TABLE {
@@ -22,7 +22,7 @@ public enum DatabaseCommands {
             if (args.length != 2) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new CreateTable(env, args[0], args[1]);
+            return new CreateTableCommand(env, args[0], args[1]);
         }
     },
     UPDATE_KEY {
@@ -31,7 +31,7 @@ public enum DatabaseCommands {
             if (args.length != 4) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new UpdateKey(env, args[0], args[1], args[2], args[3]);
+            return new UpdateKeyCommand(env, args[0], args[1], args[2], args[3]);
         }
     },
     READ_KEY {
@@ -40,7 +40,7 @@ public enum DatabaseCommands {
             if (args.length != 3) {
                 throw new DatabaseException("Wrong amount of arguments");
             }
-            return new ReadKey(env, args[0], args[1], args[2]);
+            return new ReadKeyCommand(env, args[0], args[1], args[2]);
         }
     };
 

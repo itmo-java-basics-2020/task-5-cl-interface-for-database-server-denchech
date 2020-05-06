@@ -3,16 +3,16 @@ package ru.andrey.kvstorage.console;
 import ru.andrey.kvstorage.exception.DatabaseException;
 import ru.andrey.kvstorage.console.DatabaseCommandResult.SimpleDatabaseCommandResult;
 
-public class ReadKey implements DatabaseCommand {
+public class ReadKeyCommand implements DatabaseCommand {
     private final ExecutionEnvironment env;
     private final String databaseName;
     private final String tableName;
     private final String key;
 
-    public ReadKey(ExecutionEnvironment env,
-                   String databaseName,
-                   String tableName,
-                   String key) {
+    public ReadKeyCommand(ExecutionEnvironment env,
+                          String databaseName,
+                          String tableName,
+                          String key) {
         this.env = env;
         this.databaseName = databaseName;
         this.tableName = tableName;
